@@ -100,7 +100,20 @@ golangci-lint run
 ./jina config get timeout
 ```
 
-### 7. README.md 检查
+### 7. 版本号一致性检查
+
+确保安装脚本版本与当前发布版本一致：
+
+```bash
+# 检查安装脚本版本
+grep "VERSION=" scripts/install.sh
+
+# 确保与 CHANGELOG.md 中最新版本一致
+```
+
+**重要**: 发版前必须更新 `scripts/install.sh` 中的 `VERSION` 变量。
+
+### 8. README.md 检查
 
 检查 `README.md` 符合规范：
 
@@ -110,7 +123,7 @@ golangci-lint run
 - [ ] 配置项表格完整
 - [ ] 项目结构文档与实际目录结构一致
 
-### 8. Git Commit 规范
+### 9. Git Commit 规范
 
 提交信息格式：
 
@@ -141,7 +154,7 @@ Support reading multiple URLs from a text file,
 one URL per line.
 ```
 
-### 9. 更新 CHANGELOG.md
+### 10. 更新 CHANGELOG.md
 
 在 `CHANGELOG.md` 顶部添加新版本：
 
@@ -161,7 +174,7 @@ one URL per line.
 - 移除说明
 ```
 
-### 10. 发版流程
+### 11. 发版流程
 
 ```bash
 # 1. 确认所有检查通过
