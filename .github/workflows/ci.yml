@@ -67,9 +67,10 @@ jobs:
         env:
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }}
+          CGO_ENABLED: ${{ matrix.goos == 'linux' && '0' || '1' }}
         run: |
           OUTPUT_NAME=jina-${{ matrix.goos }}-${{ matrix.goarch }}
           if [ "${{ matrix.goos }}" = "windows" ]; then
             OUTPUT_NAME=${OUTPUT_NAME}.exe
           fi
-          go build -o $OUTPUT_NAME ./cli
+          CGO_ENABLED=$CGO_ENABLED go build -o $OUTPUT_NAME ./cli
