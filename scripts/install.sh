@@ -4,7 +4,7 @@
 
 set -e
 
-VERSION="1.0.0"
+VERSION="1.0.2"
 REPO="geekjourneyx/jina-cli"
 GITHUB_BASE="https://github.com/${REPO}/releases/download/v${VERSION}"
 RAW_BASE="https://raw.githubusercontent.com/${REPO}/v${VERSION}/scripts"
